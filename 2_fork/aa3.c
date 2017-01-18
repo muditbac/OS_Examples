@@ -1,10 +1,9 @@
 #include<stdio.h>
 #include<unistd.h>
 
-using namespace std;
 
 
-int cork(){
+int cark(){
 	int p=0,q=0,r=0;
 	int s = getpid();
 	p=fork();
@@ -22,7 +21,7 @@ int cork(){
 int main(){
 
 	int q;
-	q = cork();
+	q = cark();
 	printf("%d ", getpid());
 	printf("%d ", getppid());
 	printf("%d\n", q);

@@ -10,8 +10,8 @@ int main(){
 	int q= fork();
 	if (p==0) fork();
 	fork();
-	printf("X\n");
-	fork();
+	printf("X");
+	// fork();
 
 	sleep(1);
 	return 0;

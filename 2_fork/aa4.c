@@ -1,29 +1,32 @@
 #include<stdio.h>
 #include<unistd.h>
 
-using namespace std;
-
+// TODO Complete this problem
 int aa(){
 	return -1;
 }
 
-int dork(int n){
+int dork(int n, int offset){
 	
-	int b=n;
 	int a=1;
-	while (n>0){
-		int i = fork();
+	if (n==0) return -1;
+
+	int b=fork();
+	int c=dork(n-1, offset+1);
+	if (c!=-1) {
+		if (b) return offset;
+		else return offset+c;
 		
-		a++;
-		n--;
 	}
-	return b-a;
+
+	return 0;
+	
 }
 
 int main(){
 
 	int q;
-	q = dork(2);
+	q = dork(2, 1);
 	printf("%d ", getpid());
 	printf("%d ", getppid());
 	printf("%d\n", q);
