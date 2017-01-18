@@ -11,7 +11,7 @@ int main(){
 	if (p==0) fork();
 	fork();
 	printf("X");
-	// fork();
+	//fork();
 
 	sleep(1);
 	return 0;
