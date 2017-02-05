@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <unistd.h>
 #include <fcntl.h>
 
 
@@ -13,7 +13,7 @@ int main(){
 		close(fd);
 		read(fd, &c, 1);
 		printf("child=%c", c);
-	}	
+	}
 	else {
 		sleep(1);
 		read(fd, &c, 1);
