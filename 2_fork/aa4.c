@@ -2,13 +2,12 @@
 #include<unistd.h>
 
 int dork(int n, int offset){
-	
+
 	if (n==0)
 		return offset;
 
 	if (fork()) return dork(n-1, offset);
 	else return dork(n-1, offset+1);
-
 
 }
 

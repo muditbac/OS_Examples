@@ -10,9 +10,9 @@ int main(){
 	fork();
 	q = fork();
 
-	if (p==q) printf("X\n");
-	else printf("Y\n");
-	
+	if (p==q) printf("X");
+	else printf("Y");
+
 
 	return 0;
 }

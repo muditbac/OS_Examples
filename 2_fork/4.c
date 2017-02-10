@@ -1,29 +1,29 @@
 #include<stdio.h>
 #include<unistd.h>
 
-using namespace std;
+// using namespace std;
 
+int dork(int n){
+	if (n==0) return -1;
+	// if (n==1) return fork();
+	if (n%2==0){
+		dork((n)/2);
+		return fork();
+	} else {
+		int p=dork((n-1)/2);
+		if (p==0) return fork();
+		else return p;
+	}
+}
 
 int main(){
 
 	int n;
 	scanf("%d", &n);
 
-	int id=0;
-	while(n>0){
-		if (n%2) {
-			if (id==0) id=fork();
-			// n = n-1;
-			n = n/2;
-		}
-		else {
-			id=fork();
-			n = n/2;
-		}
-		
-	}
+	int q=dork(n);
 
-	printf("%d\n", getpid());
+	printf("%d q=%d\n", getpid(), q);
 
 	sleep(1);
 	return 0;
