@@ -4,18 +4,16 @@
 int a=0;
 int d=0;
 int sum=0;
+int *p=&d;
 void k(){
-  printf("%d\n", sum);
-  kill(getpid(), SIGKILL);
+  p=&sum;
 }
 int main(){
-  signal(SIGFPE, k);
+  signal(SIGINT, k);
   while(1){
     scanf("%d", &a);
     sum += a;
-    d=a/5;
-    d=1/d;
     d=a+a;
-    printf("%d\n", d);
+    printf("%d\n", *p);
   }
 }
