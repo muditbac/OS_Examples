@@ -17,7 +17,6 @@ class kapil{
 		k = new xyz();
 		a = new Thread(k);	
 		a.start();
-		Thread.sleep(3500);
 		System.out.print("x");
 	}
 }

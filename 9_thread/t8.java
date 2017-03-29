@@ -1,9 +1,9 @@
-class xyz implements Runnable {
+class pqr implements Runnable {
 	public void run(){
 		int i;
 		// for(i=0;i<10;i++){
-		for(i=0;i<5;i++){
-			System.out.print(i);
+		for(i=0;i<26;i++){
+			System.out.print((char)('A'+i));
 			try {
 				Thread.sleep(1000);
 			}
@@ -14,15 +14,13 @@ class xyz implements Runnable {
 
 class kapil{
 	public static void main(String ar[]) throws Exception {
-		xyz k;
+		pqr k;
 		Thread a,b;
-		k = new xyz();
-
-		for(int i=1;i<=80;i++){
-			System.out.print("x");
+		k = new pqr();
+		while (true){
 			a = new Thread(k);
 			a.start();
-			Thread.sleep(2400);
+			Thread.sleep(4999);
 		}
 	}
 }

@@ -19,7 +19,7 @@ class kapil{
 		a = new Thread(k);
 		a.start();
 		for(int i=0;i<6;i++){
-			Thread.sleep(800);
+			Thread.sleep(799);
 			System.out.print("x");
 		}
 	}
