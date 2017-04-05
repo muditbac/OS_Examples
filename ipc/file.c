@@ -2,7 +2,7 @@
 
 int main(){
 
-	int m=4096;
+	int m=4095;
 	int n=2;
 	int k=1;
 
@@ -12,17 +12,19 @@ int main(){
 		fprintf(a, "A");
 	}
 
-	close(3);
-	// fclose(a);
+	// close(3);
+	fclose(a);
 
-	for (i=1;i<=n;i++){
+	for (i=1;i<=n;i++) {
 		fprintf(a, "B");
 	}
 
-	fopen("b", "w");
+	FILE* b = fopen("b", "w");
 
 	for (i=1;i<=k;i++){
 		fprintf(a, "C");
 	}
+	fprintf(b, "E");
+	fprintf(a, "X");
 
 }
