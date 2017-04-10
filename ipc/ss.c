@@ -7,8 +7,8 @@
 #define N 20 // Number of customers
 
 
-int seats=2;
-bool barberSleeping=true;
+int seats = 2; // Semaphore
+bool barberSleeping = true; // Binary Sleeping
 int currentCustomer = 0;
 
 void randwait(int secs) {
@@ -23,6 +23,8 @@ void* barber(void* _){
 	while(1){
 
 		if (barberSleeping) printf("Barber is sleeping\n");	
+
+		// Spin Lock
 		while(barberSleeping);
 
 		// take a customer
